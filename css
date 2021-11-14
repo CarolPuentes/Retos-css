@@ -1,0 +1,150 @@
+header {
+background-color: yellow; font-size: 105%;
+font-family: Arial;
+ }
+header h1 {
+margin: 0px; 
+padding: 10px;
+font-size: 250%; }
+
+/* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
+
+nav ul {
+	margin: 0px; /* tendremos que llamar a nav */
+	background-color: green;
+}
+
+/* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
+
+.menu {  /* define las condiciones de la opcion menu*/
+	list-style-type: none; /*suprime las viñetas que viene por defecto*/ 
+	margin: 0px; /*define el tamaño del margen*/
+	padding: 0px; /*define el espacio del relleno*/
+	overflow: hidden; /* oculta las barras de desplazamiento*/
+	background-color: green; /* asigna el color de fondo */
+}
+.menu li {
+float: left;
+border-right: 1px solid yellow;
+}
+.menu li a {
+display: block; color: white;
+text-align: center; padding: 12px 14px;
+text-decoration: none; }
+.menu li:last-child { border-right: none;
+}
+
+/* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
+
+div {
+	max-width: 1040px;
+	margin: 0 auto;
+}
+
+.imagen {
+	width: 100%;
+	float:left;
+}
+
+aside {
+	width: 0%;
+	float: right;
+} 
+
+article {
+	clear: both;
+	border-bottom: dashed gray 1px;
+}
+
+article img{
+  float: left;
+  width: 150px;
+  height: 120px;
+  margin-right: 0px;
+}
+
+aside img {
+    float: middle;
+    width: 150px;
+    height: 120px;
+    margin-right: 20px;
+    margin-left:1px;
+}
+body {
+	margin:0px;
+}
+
+.main-footer {
+	clear: both; 
+	background-color: yellow;
+	width: 100%;
+	border-top: 2px solid black; /*borde superior */
+	frot-family: Arial;  
+	padding: 5px; /*relleno */
+	margin: 0px;
+
+}
+
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-gap: 2px;
+}
+.wrapper > * {
+    padding: 10px;
+    grid-column: col-start / span 12;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 480px) {
+  .imagen {
+    grid-column: col-start / span 9;
+  }
+  .side {
+    grid-column: col-start 10 / span 3;
+  }
+  nav ul {
+    display: flex;
+  }
+  nav ul li {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 800px) {
+  .menu {
+    grid-column: col-start / span 2;
+  }
+  .imagen {
+    grid-column: col-start 3 / span 8;
+  }
+  .side {
+    grid-column: col-start 11 / span 2;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 600px) {
+  .main-nav {
+    grid-column: col-start / span 2;
+  }
+  .content {
+    grid-column: col-start 3 / span 8;
+  }
+  .side {
+    grid-column: col-start 11 / span 2;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
